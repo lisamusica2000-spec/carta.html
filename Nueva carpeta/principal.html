@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Te Amo - Polaroid</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background: radial-gradient(circle, #f5d5dc, #d9a4b2, #b96c7d);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .polaroid-container {
+      background: white;
+      padding: 15px 15px 40px 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+      margin-bottom: 40px;
+      transform: rotate(-5deg); /* inclinación polaroid */
+    }
+
+    .photo-placeholder {
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .photo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .polaroid-text {
+      text-align: center;
+      font-size: 22px;
+      color: #000;
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    /* Corazón con animación de latido */
+    .heart {
+      width: 100px;
+      height: 90px;
+      position: relative;
+      transform: rotate(2deg);
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+      animation: latido 1.2s infinite ease-in-out; /* animación */
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 52px;
+      height: 80px;
+      border-radius: 50px 50px 0 0;
+      background: #c75c65;
+    }
+
+    .heart::before {
+      left: 50px;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    .heart::after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    @keyframes latido {
+      0%, 100% {
+        transform: rotate(2deg) scale(1);
+      }
+      25% {
+        transform: rotate(2deg) scale(1.1);
+      }
+      50% {
+        transform: rotate(2deg) scale(1);
+      }
+      75% {
+        transform: rotate(2deg) scale(1.1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="polaroid-container">
+    <div class="photo-placeholder">
+      <!-- Aquí ponés tu foto -->
+      <img src="color.jpeg" alt="Tu foto">
+    </div>
+    <div class="polaroid-text">te amo</div>
+  </div>
+
+<a href="carta.html">
+  <div class="heart"></div>
+</a>
+</body>
+</html>
